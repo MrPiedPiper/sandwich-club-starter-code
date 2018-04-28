@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,45 +16,87 @@
 
     <TextView
         android:id="@+id/origin_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/origin_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/origin_title_tv"
+        tools:text="ExampleOrigin" />
 
     <TextView
+        android:id="@+id/also_known_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/detail_also_known_as_label"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/desctiption_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/origin_tv" />
 
     <TextView
+        android:id="@+id/ingredients_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/detail_ingredients_label"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/desctiption_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/description_tv" />
 
     <TextView
+        android:id="@+id/origin_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/detail_place_of_origin_label"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/desctiption_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/ingredients_tv" />
 
     <TextView
         android:id="@+id/description_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/desctiption_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/desctiption_title_tv"
+        tools:text="ExampleDescription" />
 
     <TextView
         android:id="@+id/ingredients_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ingredients_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/ingredients_title_tv"
+        tools:text="ExampleIngredients" />
 
     <TextView
         android:id="@+id/also_known_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/also_known_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/also_known_title_tv"
+        tools:text="Example AlsoKnown" />
 
     <TextView
+        android:id="@+id/desctiption_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/detail_description_label"
-        android:textStyle="bold" />
-</FrameLayout>
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_iv" />
+</android.support.constraint.ConstraintLayout>
