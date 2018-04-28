@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -14,6 +15,8 @@ public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
+
+    Sandwich currentSandwich = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,7 @@ public class DetailActivity extends AppCompatActivity {
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_details);
         String json = sandwiches[position];
         Sandwich sandwich = JsonUtils.parseSandwichJson(json);
+        currentSandwich = sandwich;
         if (sandwich == null) {
             // Sandwich data unavailable
             closeOnError();
@@ -57,6 +61,27 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI() {
+        //Get the TextViews
+        TextView mDescriptionTv = findViewById(R.id.description_tv);
+        TextView mIngredientsTv = findViewById(R.id.ingredients_tv);
+        TextView mOriginTv = findViewById(R.id.origin_tv);
+        TextView mAlsoKnownTv = findViewById(R.id.also_known_tv);
 
+
+
+        //Set the textviews
+        mDescriptionTv.setText(currentSandwich.getDescription());
+
+        for(int i = 0; i < currentSandwich.getIngredients().size(); i++){
+            if(i != 0) mIngredientsTv.append("\n");
+            mIngredientsTv.append(currentSandwich.getIngredients().get(i));
+        }
+
+        mOriginTv.setText(currentSandwich.getPlaceOfOrigin());
+
+        for(int i = 0; i < currentSandwich.getAlsoKnownAs().size(); i++){
+            if(i != 0) mAlsoKnownTv.append("\n");
+            mIngredientsTv.append(currentSandwich.getAlsoKnownAs().get(i));
+        }
     }
 }
