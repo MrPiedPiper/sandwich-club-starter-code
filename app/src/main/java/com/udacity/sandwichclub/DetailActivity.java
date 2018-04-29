@@ -3,6 +3,7 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -70,18 +71,23 @@ public class DetailActivity extends AppCompatActivity {
 
 
         //Set the textviews
+
+        //Set description text
         mDescriptionTv.setText(currentSandwich.getDescription());
 
+        //Set ingredient text
         for(int i = 0; i < currentSandwich.getIngredients().size(); i++){
             if(i != 0) mIngredientsTv.append("\n");
-            mIngredientsTv.append(currentSandwich.getIngredients().get(i));
+            mIngredientsTv.append("\u25CF " + currentSandwich.getIngredients().get(i));
         }
 
+        //Set origin text
         mOriginTv.setText(currentSandwich.getPlaceOfOrigin());
 
+        //Set alsoKnownAs text
         for(int i = 0; i < currentSandwich.getAlsoKnownAs().size(); i++){
             if(i != 0) mAlsoKnownTv.append("\n");
-            mIngredientsTv.append(currentSandwich.getAlsoKnownAs().get(i));
+            mAlsoKnownTv.append("\u25CF " + currentSandwich.getAlsoKnownAs().get(i));
         }
     }
 }
