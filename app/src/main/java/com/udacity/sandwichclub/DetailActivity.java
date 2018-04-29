@@ -78,7 +78,8 @@ public class DetailActivity extends AppCompatActivity {
         //Set ingredient text
         for(int i = 0; i < currentSandwich.getIngredients().size(); i++){
             if(i != 0) mIngredientsTv.append("\n");
-            mIngredientsTv.append("\u25CF " + currentSandwich.getIngredients().get(i));
+            if(currentSandwich.getIngredients().size() > 1) mIngredientsTv.append("\u25CF ");
+            mIngredientsTv.append(currentSandwich.getIngredients().get(i));
         }
 
         //Set origin text
@@ -87,7 +88,8 @@ public class DetailActivity extends AppCompatActivity {
         //Set alsoKnownAs text
         for(int i = 0; i < currentSandwich.getAlsoKnownAs().size(); i++){
             if(i != 0) mAlsoKnownTv.append("\n");
-            mAlsoKnownTv.append("\u25CF " + currentSandwich.getAlsoKnownAs().get(i));
+            if(currentSandwich.getAlsoKnownAs().size() > 1) mAlsoKnownTv.append("\u25CF ");
+            mAlsoKnownTv.append(currentSandwich.getAlsoKnownAs().get(i));
         }
     }
 }
