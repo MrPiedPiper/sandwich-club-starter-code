@@ -21,27 +21,16 @@
             android:background="@color/colorDetailPropertiesLight" />
 
         <TextView
-            android:id="@+id/origin_tv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/colorDetailPropertiesLight"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/origin_title_tv"
-            app:layout_constraintTop_toTopOf="@+id/origin_title_tv"
-            tools:text="ExampleOrigin" />
-
-        <TextView
-            android:id="@+id/also_known_title_tv"
+            android:id="@+id/desctiption_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="@string/detail_also_known_as_label"
+            android:text="@string/detail_description_label"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/desctiption_title_tv"
-            app:layout_constraintTop_toBottomOf="@+id/origin_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_iv"
+            android:layout_marginLeft="16dp"
             android:background="@color/colorDetailPropertiesLight" />
 
         <TextView
@@ -64,6 +53,17 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/desctiption_title_tv"
             app:layout_constraintTop_toBottomOf="@+id/ingredients_tv"
+            android:background="@color/colorDetailPropertiesLight" />
+
+        <TextView
+            android:id="@+id/also_known_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/detail_also_known_as_label"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/desctiption_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/origin_tv"
             android:background="@color/colorDetailPropertiesLight" />
 
         <TextView
@@ -91,6 +91,19 @@
             tools:text="ExampleIngredients" />
 
         <TextView
+            android:id="@+id/origin_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorDetailPropertiesLight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/origin_title_tv"
+            app:layout_constraintTop_toTopOf="@+id/origin_title_tv"
+            tools:text="ExampleOrigin" />
+
+        <TextView
             android:id="@+id/also_known_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -101,19 +114,6 @@
             app:layout_constraintStart_toEndOf="@+id/origin_title_tv"
             app:layout_constraintTop_toTopOf="@+id/also_known_title_tv"
             tools:text="Example AlsoKnown"
-            android:background="@color/colorDetailPropertiesLight" />
-
-        <TextView
-            android:id="@+id/desctiption_title_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/detail_description_label"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_iv"
-            android:layout_marginLeft="16dp"
             android:background="@color/colorDetailPropertiesLight" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
