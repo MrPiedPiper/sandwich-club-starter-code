@@ -35,9 +35,7 @@ public class JsonUtils {
 
             //Get the alsoKnownAs property, then convert it into a List<String>, and set the alsoKnownAs variable
             JSONArray tempAlsoKnownAs = sandwichJson.getJSONObject("name").getJSONArray("alsoKnownAs");
-            for(int i = 0; i < tempAlsoKnownAs.length(); i++){
-                alsoKnownAs.add(tempAlsoKnownAs.getString(i));
-            }
+            alsoKnownAs = jsonArrayToStringList(tempAlsoKnownAs);
 
             //Set placeOfOrigin
             placeOfOrigin = sandwichJson.getString("placeOfOrigin");
@@ -50,9 +48,8 @@ public class JsonUtils {
 
             //Get the ingredients property, then convert it into a List<String>, and set the alsoKnownAs variable
             JSONArray tempIngredients = sandwichJson.getJSONArray("ingredients");
-            for(int i = 0; i < tempIngredients.length(); i++){
-                ingredients.add(tempIngredients.getString(i));
-            }
+            ingredients = jsonArrayToStringList(tempIngredients);
+
         } catch (JSONException e) {
             //If there's a problem, catch and log an error message
             Log.e(MainActivity.class.getName(), "Error parsing JSON! : " + e.toString());
@@ -61,8 +58,27 @@ public class JsonUtils {
 
         //Create a new Sandwich variable with the retrieved attributes
         Sandwich returnSandwich = new Sandwich(mainName, alsoKnownAs, placeOfOrigin, description, image, ingredients);
+        Log.d("napu", returnSandwich.getAlsoKnownAs().toString());
+        Log.d("napu", alsoKnownAs.toString());
 
         //Return the returnSandwich variable
         return returnSandwich;
+    }
+
+    //Function converts a JSONArray into a List<String>
+    private static List<String> jsonArrayToStringList(JSONArray json){
+        //Create the list we'll be returning
+        List<String> returnList = new ArrayList<>();
+        try{
+            //For each list item, add that item to the List
+            for(int i = 0; i < json.length(); i++){
+                returnList.add(json.getString(i));
+            }
+        } catch (JSONException e) {
+            //If there's a problem, catch and log an error message
+            Log.e(MainActivity.class.getName(), "Error parsing JSON! : " + e.toString());
+            e.printStackTrace();
+        }
+        return returnList;
     }
 }
