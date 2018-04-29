@@ -58,8 +58,6 @@ public class JsonUtils {
 
         //Create a new Sandwich variable with the retrieved attributes
         Sandwich returnSandwich = new Sandwich(mainName, alsoKnownAs, placeOfOrigin, description, image, ingredients);
-        Log.d("napu", returnSandwich.getAlsoKnownAs().toString());
-        Log.d("napu", alsoKnownAs.toString());
 
         //Return the returnSandwich variable
         return returnSandwich;
