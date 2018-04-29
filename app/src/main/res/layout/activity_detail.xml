@@ -5,6 +5,7 @@
     tools:context="com.udacity.sandwichclub.DetailActivity"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/colorDetailPropertiesDark"
     >
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,7 +17,8 @@
             android:layout_height="200dp"
             android:adjustViewBounds="true"
             android:contentDescription="@string/sandwich_picture_content_description"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:background="@color/colorDetailPropertiesLight" />
 
         <TextView
             android:id="@+id/origin_tv"
@@ -24,9 +26,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorDetailPropertiesLight"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/origin_title_tv"
-            app:layout_constraintTop_toBottomOf="@+id/origin_title_tv"
+            app:layout_constraintTop_toTopOf="@+id/origin_title_tv"
             tools:text="ExampleOrigin" />
 
         <TextView
@@ -37,7 +41,8 @@
             android:text="@string/detail_also_known_as_label"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/desctiption_title_tv"
-            app:layout_constraintTop_toBottomOf="@+id/origin_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/origin_tv"
+            android:background="@color/colorDetailPropertiesLight" />
 
         <TextView
             android:id="@+id/ingredients_title_tv"
@@ -47,7 +52,8 @@
             android:text="@string/detail_ingredients_label"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/desctiption_title_tv"
-            app:layout_constraintTop_toBottomOf="@+id/description_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/description_tv"
+            android:background="@color/colorDetailPropertiesLight" />
 
         <TextView
             android:id="@+id/origin_title_tv"
@@ -57,17 +63,18 @@
             android:text="@string/detail_place_of_origin_label"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/desctiption_title_tv"
-            app:layout_constraintTop_toBottomOf="@+id/ingredients_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/ingredients_tv"
+            android:background="@color/colorDetailPropertiesLight" />
 
         <TextView
             android:id="@+id/description_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginEnd="148dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorDetailPropertiesLight"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/desctiption_title_tv"
-            app:layout_constraintTop_toBottomOf="@+id/desctiption_title_tv"
+            app:layout_constraintTop_toTopOf="@+id/desctiption_title_tv"
             tools:text="ExampleDescription" />
 
         <TextView
@@ -76,9 +83,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/colorDetailPropertiesLight"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ingredients_title_tv"
-            app:layout_constraintTop_toBottomOf="@+id/ingredients_title_tv"
+            app:layout_constraintStart_toEndOf="@+id/origin_title_tv"
+            app:layout_constraintTop_toTopOf="@+id/ingredients_title_tv"
             tools:text="ExampleIngredients" />
 
         <TextView
@@ -89,9 +98,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/also_known_title_tv"
-            app:layout_constraintTop_toBottomOf="@+id/also_known_title_tv"
-            tools:text="Example AlsoKnown" />
+            app:layout_constraintStart_toEndOf="@+id/origin_title_tv"
+            app:layout_constraintTop_toTopOf="@+id/also_known_title_tv"
+            tools:text="Example AlsoKnown"
+            android:background="@color/colorDetailPropertiesLight" />
 
         <TextView
             android:id="@+id/desctiption_title_tv"
@@ -103,6 +113,7 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/image_iv"
-            android:layout_marginLeft="16dp" />
+            android:layout_marginLeft="16dp"
+            android:background="@color/colorDetailPropertiesLight" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
